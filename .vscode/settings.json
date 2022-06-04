@@ -21,5 +21,6 @@
     "emmet.triggerExpansionOnTab": true,
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
-    }
+    },
+    "cSpell.words": ["abouts"]
 }
