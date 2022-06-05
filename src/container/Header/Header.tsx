@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import { AppWrap } from "Wrapper";
 import { images } from "../../constants";
 import styles from "./Header.module.scss";
 
@@ -46,6 +47,7 @@ function Header() {
                 className={`${styles.app__header_img}`}
             >
                 <Image src={images.profile} alt="profile_bg" />
+
                 <motion.div
                     whileInView={{ scale: [0, 1] }}
                     transition={{ duration: 1, ease: "easeInOut" }}
@@ -70,4 +72,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default AppWrap(Header, "home");

@@ -4,30 +4,8 @@
 import { urlFor } from "client";
 import { motion } from "framer-motion";
 import React from "react";
+import { AppWrap } from "Wrapper/index";
 import styles from "./About.module.scss";
-
-// const abouts = [
-//     {
-//         title: "Web Development",
-//         description: "I am a good web developer",
-//         imgUrl: images.about01,
-//     },
-//     {
-//         title: "Backend Development",
-//         description: "I am a good web developer",
-//         imgUrl: images.about02,
-//     },
-//     {
-//         title: "Full stack development",
-//         description: "I am a good web developer",
-//         imgUrl: images.about03,
-//     },
-//     {
-//         title: "React Development",
-//         description: "I am a good web developer",
-//         imgUrl: images.about04,
-//     },
-// ];
 
 function About({ abouts }: { abouts: any }) {
     return (
@@ -37,7 +15,7 @@ function About({ abouts }: { abouts: any }) {
             </h2>
 
             <div className={`${styles.app__profiles}`}>
-                {abouts.map((about: any, i: any) => (
+                {abouts?.map((about: any, i: any) => (
                     <motion.div
                         whileInView={{ opacity: 1 }}
                         whileHover={{ scale: 1.1 }}
@@ -59,4 +37,4 @@ function About({ abouts }: { abouts: any }) {
     );
 }
 
-export default About;
+export default AppWrap(About, "about");
