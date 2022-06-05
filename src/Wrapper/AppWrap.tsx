@@ -11,7 +11,7 @@ const AppWrap = (Component: any, idName?: string, classNames?: string) =>
                     <Component {...props} />
 
                     <div className="copyright">
-                        <p className="p-text">@2020 MICHAEL</p>
+                        <p className="p-text">@2022 Raiyan</p>
                         <p className="p-text">All rights reserved</p>
                     </div>
                 </div>

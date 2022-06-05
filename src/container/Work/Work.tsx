@@ -5,7 +5,7 @@ import { urlFor } from "client";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
-import { AppWrap } from "Wrapper/index";
+import { AppWrap, MotionWrap } from "Wrapper/index";
 import styles from "./Work.module.scss";
 
 function Work({ works }: { works: any }) {
@@ -107,4 +107,4 @@ function Work({ works }: { works: any }) {
     );
 }
 
-export default AppWrap(Work, "work");
+export default AppWrap(MotionWrap(Work, `${styles.app__works}`), "work", "app__primarybg");

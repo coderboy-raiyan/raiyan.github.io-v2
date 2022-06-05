@@ -10,6 +10,11 @@ export default {
             type: "string",
         },
         {
+            name: "certification",
+            title: "Certification",
+            type: "string",
+        },
+        {
             name: "desc",
             title: "Desc",
             type: "string",
