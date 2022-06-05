@@ -6,16 +6,14 @@ import React from "react";
 function NavigationDots({ active }: { active: any }) {
     return (
         <div className="app__navigation">
-            {["home", "about", "contact", "work", "testimonials", "skills", "contact"].map(
-                (item, index) => (
-                    <a
-                        key={item + index}
-                        style={active === item ? { backgroundColor: "#313ABC" } : {}}
-                        className="app__navigation_dot"
-                        href={`#${item}`}
-                    />
-                )
-            )}
+            {["home", "about", "work", "skills", "testimonial", "contact"].map((item, index) => (
+                <a
+                    key={item + index}
+                    style={active === item ? { backgroundColor: "#313ABC" } : {}}
+                    className="app__navigation_dot"
+                    href={`#${item}`}
+                />
+            ))}
         </div>
     );
 }
