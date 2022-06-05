@@ -8,13 +8,14 @@ function index({
     skills,
     works,
     experiences,
+    testimonials,
 }: {
     abouts: any;
     skills: any;
     works: any;
     experiences: any;
+    testimonials: any;
 }) {
-    console.log(abouts, skills, works);
     return (
         <div className="app">
             <Navbar />
@@ -22,7 +23,7 @@ function index({
             <About abouts={abouts} />
             <Work works={works} />
             <Skills skills={skills} experiences={experiences} />
-            <Testimonials />
+            <Testimonials testimonials={testimonials} />
             <Footer />
         </div>
     );
@@ -33,11 +34,14 @@ export async function getServerSideProps(): Promise<any> {
     const skillsQuery = '*[_type == "skills"]';
     const worksQuery = '*[_type == "works"]';
     const experiencesOuery = '*[_type == "experiences"]';
+    const testimonialsQuery = '*[_type == "testimonials"]';
+
     const abouts = await client.fetch(aboutQuery);
     const skills = await client.fetch(skillsQuery);
     const works = await client.fetch(worksQuery);
     const experiences = await client.fetch(experiencesOuery);
-    return { props: { abouts, skills, works, experiences } };
+    const testimonials = await client.fetch(testimonialsQuery);
+    return { props: { abouts, skills, works, experiences, testimonials } };
 }
 
 export default index;
