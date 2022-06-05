@@ -11,7 +11,7 @@ function Navbar() {
     return (
         <nav className={styles.app__navbar}>
             <div className={styles.app__navbar_logo}>
-                <Image src={images.logo} />
+                <Image width="160x" objectFit="contain" height="30px" src={images.logo} />
             </div>
             <ul className={styles.app__navbar_links}>
                 {["home", "about", "work", "Testimonial", "skills", "contact"].map((item) => (
