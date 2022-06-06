@@ -1,9 +1,10 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/no-array-index-key */
 import { urlFor } from "client";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { AppWrap, MotionWrap } from "Wrapper/index";
 import styles from "./Work.module.scss";
@@ -12,6 +13,18 @@ function Work({ works }: { works: any }) {
     const [activeFilter, setActiveFilter] = useState("All");
     const [animateCard, setAnimateCard] = useState<any>({ y: 0, opacity: 1 });
     const [filterWork, setFilterWork] = useState(works);
+    const [tags, setTags] = useState<string[]>([]);
+
+    // Mechanism for filter all the tags dynamically
+    useEffect(() => {
+        if (works.length) {
+            let filterAllTags: string[] = [];
+            for (let i = 0; i < works.length; i++) {
+                filterAllTags = [...filterAllTags, ...works[i].tags];
+            }
+            setTags(() => [...new Set(filterAllTags.map((tag) => tag))]);
+        }
+    }, [works.length]);
 
     const handelWorkFilter = (item: string) => {
         setActiveFilter(item);
@@ -23,7 +36,7 @@ function Work({ works }: { works: any }) {
             if (item === "All") {
                 setFilterWork(works);
             } else {
-                setFilterWork(works.filter((work: any) => work.tags.includes(item)));
+                setFilterWork(works.filter((work: any) => work.tags.includes(item.toLowerCase())));
             }
         }, 500);
     };
@@ -35,10 +48,12 @@ function Work({ works }: { works: any }) {
             </h2>
 
             <div className={`${styles.app__work_filter}`}>
-                {["UI/UX", "Web App", "Mobile App", "React js", "All"].map((item, index) => (
+                {tags.map((item, index) => (
                     <div
                         className={`${styles.app__work_filter_item} app__flex p-text ${
-                            activeFilter === item ? styles.item_active : ""
+                            activeFilter.toLowerCase() === item.toLowerCase()
+                                ? styles.item_active
+                                : ""
                         }`}
                         onClick={() => handelWorkFilter(item)}
                         key={index}
