@@ -1,6 +1,7 @@
 import { client } from "client";
 import { Navbar } from "components";
 import { About, Footer, Header, Skills, Testimonials, Work } from "container";
+import Head from "next/head";
 import React from "react";
 
 function index({
@@ -17,15 +18,20 @@ function index({
     testimonials: any;
 }) {
     return (
-        <div className="app">
-            <Navbar />
-            <Header />
-            <About abouts={abouts} />
-            <Work works={works} />
-            <Skills skills={skills} experiences={experiences} />
-            <Testimonials testimonials={testimonials} />
-            <Footer />
-        </div>
+        <>
+            <Head>
+                <title>Hello - Cool Dev</title>
+            </Head>
+            <div className="app">
+                <Navbar />
+                <Header />
+                <About abouts={abouts} />
+                <Work works={works} />
+                <Skills skills={skills} experiences={experiences} />
+                <Testimonials testimonials={testimonials} />
+                <Footer />
+            </div>
+        </>
     );
 }
 
