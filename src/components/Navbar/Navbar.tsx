@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { images } from "constants/index";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import styles from "./Navbar.module.scss";
@@ -11,7 +13,11 @@ function Navbar() {
     return (
         <nav className={styles.app__navbar}>
             <div className={styles.app__navbar_logo}>
-                <Image width="160x" objectFit="contain" height="30px" src={images.logo} />
+                <Link href="/">
+                    <a>
+                        <Image width="160x" objectFit="contain" height="30px" src={images.logo} />
+                    </a>
+                </Link>
             </div>
             <ul className={styles.app__navbar_links}>
                 {["home", "about", "work", "Testimonial", "skills", "contact"].map((item) => (
