@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# raiyan.dev
 
-## Getting Started
+[![CI](https://github.com/trekhleb/trekhleb.github.io/workflows/CI/badge.svg)](https://github.com/trekhleb/trekhleb.github.io/actions?query=workflow%3ACI+branch%3Amaster)
 
-First, run the development server:
+My personal [website](https://raiyan-programmer.vercel.app/) with a list of my projects that help people learn and web-development, and Some of my testimonials.
+
+![Raiyan.dev](https://res.cloudinary.com/dayleukzg/image/upload/v1654585163/Personal/Black_Minimal_Business_Personal_Profile_Linkedin_Banner_dkcx4c.png)
+
+## Development
+
+The website is built on [Next js](https://nextjs.org/). See the [Next js cheat-sheet](https://guydumais.digital/blog/next-js-the-ultimate-cheat-sheet-to-page-rendering/) for development hints.
+
+### Running the project locally
+
+To run the project locally in development mode on [http://localhost:3000](http://localhost:3000)
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To run the Sanity CMS locally in development mode on [http://localhost:3333](http://localhost:3333)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+sanity start
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+To deploy Sanity CMS locally in development mode on
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+sanity deploy
+```
 
-## Learn More
+To build the production version of the project:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+yarn build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To do ESLint and Type checking:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm run lint
+npm run type
+```
 
-## Deploy on Vercel
+### Working with icons
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Use [react-icons.github.io](https://react-icons.github.io/react-icons) to search for available icons.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Styling components
+
+Use [SASS](https://sass-lang.com/) to search for how to use.
+
+### Custom Domain Support
+
+To serve the [raiyan.github.io](https://raiyan-github-io.vercel.app/) web-site on a custom domain [Raiyan.dev](https://raiyan-programmer.vercel.app/) make sure that the `main` branch has `vercel.json` file in the root folder inside `alias` key with your domain value. For more details read [this](https://vercel.com/docs/project-configuration).
