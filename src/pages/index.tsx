@@ -20,7 +20,8 @@ function index({
     return (
         <>
             <Head>
-                <title>Hello - Cool Dev</title>
+                <title>Raiyan | MERN Stack Dev</title>
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="app">
                 <Navbar />
