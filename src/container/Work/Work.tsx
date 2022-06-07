@@ -10,9 +10,11 @@ import { AppWrap, MotionWrap } from "Wrapper/index";
 import styles from "./Work.module.scss";
 
 function Work({ works }: { works: any }) {
-    const [activeFilter, setActiveFilter] = useState("All");
+    const [activeFilter, setActiveFilter] = useState("next js");
     const [animateCard, setAnimateCard] = useState<any>({ y: 0, opacity: 1 });
-    const [filterWork, setFilterWork] = useState(works);
+    const [filterWork, setFilterWork] = useState(
+        works.filter((work: any) => work.tags.includes("next js"))
+    );
     const [tags, setTags] = useState<string[]>([]);
 
     // Mechanism for filter all the tags dynamically
@@ -33,7 +35,7 @@ function Work({ works }: { works: any }) {
         setTimeout(() => {
             setAnimateCard([{ y: 0, opacity: 1 }]);
 
-            if (item === "All") {
+            if (item === "all") {
                 setFilterWork(works);
             } else {
                 setFilterWork(works.filter((work: any) => work.tags.includes(item.toLowerCase())));
