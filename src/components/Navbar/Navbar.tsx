@@ -26,6 +26,16 @@ function Navbar() {
                         <a href={`#${item.toLowerCase()}`}>{item}</a>
                     </li>
                 ))}
+                <li className="app__flex p-text">
+                    <div />
+                    <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://drive.google.com/file/d/145t8MYI0qzrmdr9tesYPa0NPqtrSTQpr/view?usp=sharing"
+                    >
+                        Download Resume
+                    </a>
+                </li>
             </ul>
 
             {/* mobile menu */}
