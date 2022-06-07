@@ -8,7 +8,6 @@ import { urlFor } from "../../client";
 import styles from "./Skills.module.scss";
 
 function Skills({ skills, experiences }: { skills: any; experiences: any }) {
-    console.log(skills, experiences);
     return (
         <>
             <h2 className="head-text">
