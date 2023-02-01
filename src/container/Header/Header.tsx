@@ -1,7 +1,7 @@
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/no-array-index-key */
 import { motion } from "framer-motion";
 import Image from "next/image";
-import React from "react";
 import { AppWrap } from "Wrapper";
 import { images } from "../../constants";
 import styles from "./Header.module.scss";
@@ -46,7 +46,7 @@ function Header() {
                 transition={{ duration: 0.5, delayChildren: 0.5 }}
                 className={`${styles.app__header_img}`}
             >
-                <Image src={images.profile} alt="profile_bg" />
+                <Image src={images.mainProfile} alt="profile_bg" />
 
                 <motion.div
                     whileInView={{ scale: [0, 1] }}
